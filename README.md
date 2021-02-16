@@ -8,6 +8,10 @@ In your app, users will be able to answer questions, see which questions they ha
 
 In the project directory, you can run:
 
+### `yarn or npm install`
+
+First, you need to install the dependencies using either yarn or npm package managers.
+
 ### `yarn start or npm start`
 
 Runs the app in the development mode.\
