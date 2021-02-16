@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40em;
+  margin: 2em auto;
+  padding: 2em;
+  text-align: center;
+  border: 2px solid #1c8d73;
+  border-radius: 10px;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 1em;
+}
+
+.subtitle {
+  font-size: 1rem;
+  margin-bottom: 2em;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 15em;
+}
+
+.select {
+  border: 1px solid #1c8d73;
+  font-weight: 200;
+  margin-bottom: 1em;
+  border-radius: 0.9em;
+  padding: 0.5em 1em;
+}
+
+.select:active,
+.select:focus,
+.button:active,
+.button:focus {
+  outline: none;
+}
+
+.option {
+  color: red;
+}
+
+.button {
+  background: none;
+  border: 3px solid #1c8d73;
+  border-radius: 0.9em;
+  padding: 0.5em 0;
+}

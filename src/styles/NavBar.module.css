@@ -1,0 +1,62 @@
+a {
+  text-decoration: none;
+}
+
+.container {
+  height: 4em;
+  width: 100vw;
+  padding: 0 5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tabs,
+.auth {
+  list-style: none;
+  display: flex;
+}
+
+.tabs li,
+.auth li {
+  margin-left: 1.5em;
+  padding: 1em;
+  border-radius: 10px;
+}
+
+.navtab:hover {
+  color: #1c8d73;
+  text-decoration: underline;
+}
+
+.activeTab {
+  color: white;
+  background-color: #1c8d73;
+  padding: 0.4em 0.75em;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+}
+
+.name {
+  font-size: 1rem;
+}
+
+.avatar {
+  height: 2em;
+  margin-left: 1em;
+}
+
+.logout {
+  background: none;
+  border: none;
+  border-radius: 10px;
+  background-color: #1c8d73;
+  color: white;
+  padding: 0.5em 1em;
+  font-size: 0.9rem;
+}

@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 40em;
+  margin: 1em auto;
+  border: 1px solid #1c8d73;
+}
+
+.header {
+  display: flex;
+}
+
+.separator {
+  background-color: #1c8d73;
+  height: 1px;
+}
+
+.inactiveTab {
+  padding: 1em;
+  cursor: pointer;
+  text-align: center;
+  flex: 1;
+  color: #1c8d73;
+}
+
+.activeTab {
+  padding: 1em;
+  cursor: pointer;
+  text-align: center;
+  flex: 1;
+  background-color: #1c8d73;
+  color: #fff;
+}

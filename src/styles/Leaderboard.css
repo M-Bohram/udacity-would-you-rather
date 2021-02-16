@@ -1,0 +1,73 @@
+.container {
+  border: 0.5px solid grey;
+  border-radius: 10px;
+  margin: 1em auto;
+  width: 40em;
+  padding: 1em 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  /* border: 1px solid grey; */
+  display: flex;
+}
+
+.author {
+  width: 10em;
+  display: flex;
+  flex-direction: column;
+  margin-left: 1em;
+}
+
+.author__name {
+  margin: 0 auto;
+  font-weight: 500;
+}
+
+.author__avatar {
+  height: 10em;
+  width: 10em;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 1em;
+  margin-top: 3em;
+  height: 6em;
+  border-left: 1px solid grey;
+  padding-left: 1em;
+  padding-top: 0;
+}
+
+.info__questions {
+  margin-bottom: 1em;
+}
+
+.score {
+  background-color: #03254c;
+  height: 5em;
+  width: 5em;
+  border-radius: 50%;
+  position: relative;
+  margin-left: 4em;
+  margin-top: 3em;
+}
+
+.score__points {
+  position: absolute;
+  left: 1.7em;
+  top: 1.3em;
+  font-size: 20px;
+  color: white;
+}
+
+.score__word {
+  position: absolute;
+  left: 1em;
+  top: -2em;
+  font-weight: 500;
+}

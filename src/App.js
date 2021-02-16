@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import { Fragment, Component } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { connect } from "react-redux";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import NewQuestion from "./components/NewQuestion";
+import Leaderboard from "./components/Leaderboard";
+import DetailedQuestion from "./components/DetailedQuestion";
+import Home from "./components/Home";
+import NavBar from "./components/NavBar";
+import { handleGetQuestions } from "./actions/question";
+import { handleGetUsers } from "./actions/user";
+
+class App extends Component {
+  componentDidMount() {
+    this.props.dispatch(handleGetQuestions());
+    this.props.dispatch(handleGetUsers());
+  }
+  render() {
+    return (
+      <Fragment>
+        <hr />
+        <Router>
+          <NavBar />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/add" component={NewQuestion} />
+            <Route exact path="/leaderboard" component={Leaderboard} />
+            <Route
+              exact
+              path="/question/:questionId"
+              component={DetailedQuestion}
+            />
+          </Switch>
+        </Router>
+      </Fragment>
+    );
+  }
 }
 
-export default App;
+// function mapStateToProps({ users, questions }) {
+
+// }
+
+export default connect()(App);
