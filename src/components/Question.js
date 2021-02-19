@@ -1,40 +1,39 @@
-import React, { Component } from "react";
-
-import AnsweredQuestion from "./AnsweredQuestion";
-import BriefQuestion from "./BriefQuestion";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import BriefQuestion from './BriefQuestion';
 
 class Question extends Component {
-  render() {
-    const { showAnswered, question, authedUser, users } = this.props;
-
-    const { avatarURL, name } = users[question.author];
-    const author = { avatarURL, name };
-    const options = {
-      optionOne: question.optionOne.text,
-      optionTwo: question.optionTwo.text,
-    };
-    const votes = {
-      optionOne: question.optionOne.votes.length,
-      optionTwo: question.optionTwo.votes.length,
-    };
-    const userVote = question.optionOne.votes.includes(authedUser.id)
-      ? "optionOne"
-      : "optionTwo";
-
-    return showAnswered ? (
-      <BriefQuestion
-        author={author}
-        optionOne={options.optionOne}
-        questionId={question.id}
-      />
-    ) : (
-      <BriefQuestion
-        author={author}
-        optionOne={options.optionOne}
-        questionId={question.id}
-      />
-    );
-  }
+    render() {
+        const {
+            authedUser,
+            questions,
+            users,
+            questionId,
+            showAnswered,
+        } = this.props;
+        const question = questions[questionId];
+        const { avatarURL, name } = users[question.author];
+        const author = { avatarURL, name };
+        const optionOne = question.optionOne.text;
+        return (
+            Object.keys(authedUser.answers).includes(questionId) ===
+                showAnswered && (
+                <BriefQuestion
+                    author={author}
+                    optionOne={optionOne}
+                    questionId={questionId}
+                />
+            )
+        );
+    }
 }
 
-export default Question;
+function mapStateToProps({ authedUser, questions, users }) {
+    return {
+        authedUser,
+        questions,
+        users,
+    };
+}
+
+export default connect(mapStateToProps)(Question);
